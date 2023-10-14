@@ -85,7 +85,7 @@ git submodule update
     # For example, python convert.py sd-v1-4.ckpt --out_type f16
     ```
 
-### For E2K
+### For E2Kv5
 - you can download q4_0 models 
 
     ```shell
@@ -102,7 +102,7 @@ You can specify the output model format using the --out_type parameter
 - `f32` for 32-bit floating-point
 - `q8_0` for 8-bit integer quantization 
 - `q5_0` or `q5_1` for 5-bit integer quantization 
-- `q4_0` or `q4_1` for 4-bit integer quantization (now E2K support optimization only for q4_0)
+- `q4_0` or `q4_1` for 4-bit integer quantization (now E2Kv5 support optimization only for q4_0)
 
 
 ### Build
