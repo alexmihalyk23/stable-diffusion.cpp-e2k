@@ -84,7 +84,9 @@ git submodule update
     python convert.py [path to weights] --out_type [output precision]
     # For example, python convert.py sd-v1-4.ckpt --out_type f16
     ```
-- download q4_0 models
+
+### For E2K
+- you can download q4_0 models 
 
     ```shell
     cd models
