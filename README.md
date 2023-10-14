@@ -84,6 +84,13 @@ git submodule update
     python convert.py [path to weights] --out_type [output precision]
     # For example, python convert.py sd-v1-4.ckpt --out_type f16
     ```
+- download q4_0 models
+
+    ```shell
+    cd models
+    wget https://huggingface.co/alexmihalyk23Lex/StableDiffusion.cpp-ggml/resolve/main/anime-ggml-model-q4_0.bin
+    #!wget https://huggingface.co/alexmihalyk23Lex/StableDiffusion.cpp-ggml/resolve/main/deliberate-ggml-model-q4_0.bin
+    ```
 
 ### Quantization
 
@@ -93,7 +100,8 @@ You can specify the output model format using the --out_type parameter
 - `f32` for 32-bit floating-point
 - `q8_0` for 8-bit integer quantization 
 - `q5_0` or `q5_1` for 5-bit integer quantization 
-- `q4_0` or `q4_1` for 4-bit integer quantization
+- `q4_0` or `q4_1` for 4-bit integer quantization (now E2K support optimization only for q4_0)
+
 
 ### Build
 
