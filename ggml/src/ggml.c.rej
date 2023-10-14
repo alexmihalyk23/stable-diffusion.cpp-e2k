@@ -1,0 +1,16 @@
+--- ggml.c
++++ ggml.c
+@@ -1444,7 +1454,13 @@ static void dequantize_row_q8_0(const void * restrict vx, float * restrict y, in
+     }
+ }
+ 
++#ifdef __e2k__
++#define static
++#endif
+ static void ggml_vec_dot_q4_0_q8_0(const int n, float * restrict s, const void * restrict vx, const void * restrict vy);
++#ifdef __e2k__
++#undef static
++#endif
+ static void ggml_vec_dot_q4_1_q8_1(const int n, float * restrict s, const void * restrict vx, const void * restrict vy);
+ static void ggml_vec_dot_q5_0_q8_0(const int n, float * restrict s, const void * restrict vx, const void * restrict vy);
+ static void ggml_vec_dot_q5_1_q8_1(const int n, float * restrict s, const void * restrict vx, const void * restrict vy);
