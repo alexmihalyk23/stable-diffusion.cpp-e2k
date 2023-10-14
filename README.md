@@ -14,6 +14,7 @@ Inference of [Stable Diffusion](https://github.com/CompVis/stable-diffusion) in 
 - Accelerated memory-efficient CPU inference
     - Only requires ~2.3GB when using txt2img with fp16 precision to generate a 512x512 image
 - AVX, AVX2 and AVX512 support for x86 architectures
+- Add E2K support
 - SD1.x and SD2.x support
 - Original `txt2img` and `img2img` mode
 - Negative prompt
