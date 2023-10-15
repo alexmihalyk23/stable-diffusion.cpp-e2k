@@ -257,7 +257,8 @@ if (GGML_PERF)
     set(GGML_EXTRA_FLAGS ${GGML_EXTRA_FLAGS} -DGGML_PERF)
 endif()
 
-add_library(${TARGET}
+if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "e2k")
+    add_library(${TARGET}
     ggml.c
     ggml_e2k.c
     ggml-alloc.c
@@ -267,6 +268,17 @@ add_library(${TARGET}
     ${GGML_OPENCL_SOURCES}
     ${GGML_METAL_SOURCES}
     )
+else()
+    add_library(${TARGET}
+    ggml.c
+    ggml-alloc.c
+    ../include/ggml/ggml.h
+    ../include/ggml/ggml-alloc.h
+    ${GGML_CUDA_SOURCES}
+    ${GGML_OPENCL_SOURCES}
+    ${GGML_METAL_SOURCES}
+    )
+endif()
 
 target_include_directories(${TARGET} PUBLIC
     .
